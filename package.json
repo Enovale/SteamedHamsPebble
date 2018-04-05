@@ -1,0 +1,88 @@
+{
+    "author": "Meme Inc",
+    "dependencies": {},
+    "keywords": [],
+    "name": "steamed-hams",
+    "pebble": {
+        "displayName": "Steamed Hams",
+        "enableMultiJS": true,
+        "messageKeys": [],
+        "projectType": "native",
+        "resources": {
+            "media": [
+                {
+                    "file": "images/separator.png",
+                    "name": "IMG_SEPARATOR",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/logo.pg",
+                    "name": "MENU_LOGO",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/icon.png",
+                    "menuIcon": true,
+                    "name": "GAME_ICON",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/frame3.png",
+                    "name": "FRAME_THREE",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/frame2.png",
+                    "name": "FRAME_TWO",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/frame1.png",
+                    "name": "FRAME_ONE",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/play.png",
+                    "name": "PLAY_BUTTON",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/choice.png",
+                    "name": "CHOICE_BOX_BMP",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
+                    "file": "fonts/Sans.ttf",
+                    "name": "FONT_OSP_DIN_44",
+                    "targetPlatforms": null,
+                    "type": "font"
+                },
+                {
+                    "file": "images/dialogue.png",
+                    "name": "DIALOGUE_BMP",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                }
+            ]
+        },
+        "sdkVersion": "3",
+        "targetPlatforms": [
+            "aplite",
+            "basalt",
+            "diorite"
+        ],
+        "uuid": "47d2fd2a-7809-4cfe-9144-08173353aaad",
+        "watchapp": {
+            "watchface": false
+        }
+    },
+    "version": "2.0.0"
+}
