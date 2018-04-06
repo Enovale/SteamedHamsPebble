@@ -101,7 +101,7 @@ void config_provider(Window *window) {
 void show_main(void) {
   persist_write_int(currentText, currentText);
   currChoice = 0;
-  choiceActive = true;
+  choiceActive = false;
   grumpy = false;
   APP_LOG(APP_LOG_LEVEL_DEBUG, "show_main() called");
   initialise_ui();

@@ -11,8 +11,20 @@
         "resources": {
             "media": [
                 {
+                    "file": "images/frame4.png",
+                    "name": "FRAME_FOUR",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
                     "file": "images/separator.png",
                     "name": "IMG_SEPARATOR",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/play.png",
+                    "name": "PLAY_BUTTON",
                     "targetPlatforms": null,
                     "type": "bitmap"
                 },
@@ -48,8 +60,8 @@
                     "type": "bitmap"
                 },
                 {
-                    "file": "images/play.png",
-                    "name": "PLAY_BUTTON",
+                    "file": "images/dialogue.png",
+                    "name": "DIALOGUE_BMP",
                     "targetPlatforms": null,
                     "type": "bitmap"
                 },
@@ -64,12 +76,6 @@
                     "name": "FONT_OSP_DIN_44",
                     "targetPlatforms": null,
                     "type": "font"
-                },
-                {
-                    "file": "images/dialogue.png",
-                    "name": "DIALOGUE_BMP",
-                    "targetPlatforms": null,
-                    "type": "bitmap"
                 }
             ]
         },

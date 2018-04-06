@@ -9,6 +9,7 @@ bool grumpy;
 GBitmap *s_res_frame1_bmp;
 GBitmap *s_res_frame2_bmp;
 GBitmap *s_res_frame3_bmp;
+GBitmap *s_res_frame4_bmp;
 // BEGIN AUTO-GENERATED UI CODE; DO NOT MODIFY
 static Window *s_window;
 static GBitmap *s_res_dialogue_bmp;
@@ -197,6 +198,9 @@ void continueDialogue(void) {
       text_layer_set_text(s_textlayer_3, "Purchase chinese food");
     }
     if(grumpy==false) {
+      gbitmap_destroy(s_res_frame2_bmp);
+      s_res_frame3_bmp = gbitmap_create_with_resource(RESOURCE_ID_FRAME_THREE);
+      bitmap_layer_set_bitmap(s_bitmaplayer_2, s_res_frame3_bmp);
       text_layer_set_text(s_textlayer_4, "Seymour");
       text_layer_set_text(s_textlayer_1, "*His roast is completely engulfed!*");
     }
@@ -204,10 +208,16 @@ void continueDialogue(void) {
   if (currentText == 6) {
      if(grumpy==true) {
           if(currChoice==0) {
+            gbitmap_destroy(s_res_frame3_bmp);
+            s_res_frame4_bmp = gbitmap_create_with_resource(RESOURCE_ID_FRAME_FOUR);
+            bitmap_layer_set_bitmap(s_bitmaplayer_2, s_res_frame4_bmp);
             text_layer_set_text(s_textlayer_4, "Seymour");
             text_layer_set_text(s_textlayer_1, "What if I were to purchase fast");
           }
           if(currChoice==1) {
+            gbitmap_destroy(s_res_frame3_bmp);
+            s_res_frame4_bmp = gbitmap_create_with_resource(RESOURCE_ID_FRAME_FOUR);
+            bitmap_layer_set_bitmap(s_bitmaplayer_2, s_res_frame4_bmp);
             text_layer_set_text(s_textlayer_4, "Seymour");
             text_layer_set_text(s_textlayer_1, "What if I were to purchase chinese");
           }
@@ -253,7 +263,8 @@ void game_config_provider(Window *window) {
 
 void start_game(void) {
   show_menu();
-  currentText--;
+  choiceActive = false;
+  currentText = -2;
   window_set_click_config_provider(s_window, (ClickConfigProvider) game_config_provider);
   continueDialogue();
   APP_LOG(APP_LOG_LEVEL_DEBUG, "currentText is %d", currentText);
