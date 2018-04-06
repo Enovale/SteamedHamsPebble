@@ -116,26 +116,8 @@ void hide_main(void) {
 }
 
 int main() {
-  if (persist_exists(currentText)) {
-  // Read persisted value
-  currentText = persist_read_int(currentText);
-} else {
-  // Choose a default value
-  currentText = -1;
-
-  // Remember the default value until the user chooses their own value
-  persist_write_int(currentText, currentText);
-}
- if (persist_exists(grumpy)) {
-  // Read persisted value
-  grumpy = persist_read_int(grumpy);
-} else {
-  // Choose a default value
- grumpy = false;
-
-  // Remember the default value until the user chooses their own value
-  persist_write_int(grumpy, grumpy);
-}
+  currentText = -2;
+  grumpy = false;
   s_res_frame1_bmp = gbitmap_create_with_resource(RESOURCE_ID_FRAME_ONE);
   APP_LOG(APP_LOG_LEVEL_DEBUG, "Menu opened");
   currentText = -1;

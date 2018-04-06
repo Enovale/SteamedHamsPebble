@@ -13,7 +13,7 @@ static void initialise_ui(void) {
   
   // s_textlayer_1
   s_textlayer_1 = text_layer_create(GRect(0, -1, 145, 171));
-  text_layer_set_text(s_textlayer_1, "This game also saves your data, only when you press back to return to the menu. You can also press up on the title screen to erase your save data. mmm, save data!");
+  text_layer_set_text(s_textlayer_1, "This game also is in development and developed after a dead meme. Don't judge too hard.");
   text_layer_set_text_alignment(s_textlayer_1, GTextAlignmentCenter);
   layer_add_child(window_get_root_layer(s_window), (Layer *)s_textlayer_1);
 }
