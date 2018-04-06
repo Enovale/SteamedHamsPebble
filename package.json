@@ -11,6 +11,30 @@
         "resources": {
             "media": [
                 {
+                    "file": "images/frame28.png",
+                    "name": "FRAME_TWENTY_EIGHT",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/frame8.png",
+                    "name": "FRAME_EIGHT",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/frame7.png",
+                    "name": "FRAME_SEVEN",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/frame6.png",
+                    "name": "FRAME_SIX",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
                     "file": "images/frame5.png",
                     "name": "FRAME_FIVE",
                     "targetPlatforms": null,
