@@ -10,6 +10,7 @@ GBitmap *s_res_frame1_bmp;
 GBitmap *s_res_frame2_bmp;
 GBitmap *s_res_frame3_bmp;
 GBitmap *s_res_frame4_bmp;
+GBitmap *s_res_frame5_bmp;
 // BEGIN AUTO-GENERATED UI CODE; DO NOT MODIFY
 static Window *s_window;
 static GBitmap *s_res_dialogue_bmp;
@@ -169,11 +170,8 @@ void continueDialogue(void) {
       text_layer_set_text(s_textlayer_1, "Chalmers leaves to the dining table*");
     }
     if(grumpy==false) {
-      gbitmap_destroy(s_res_frame1_bmp);
-      s_res_frame2_bmp = gbitmap_create_with_resource(RESOURCE_ID_FRAME_TWO);
-      bitmap_layer_set_bitmap(s_bitmaplayer_2, s_res_frame2_bmp);
-      text_layer_set_text(s_textlayer_4, "");
-      text_layer_set_text(s_textlayer_1, "*Seymour leaves to the kitched, and");
+      text_layer_set_text(s_textlayer_4, "Chalmers");
+      text_layer_set_text(s_textlayer_1, "Yeah.");
     }
   }
   if (currentText == 4) {
@@ -185,8 +183,11 @@ void continueDialogue(void) {
       text_layer_set_text(s_textlayer_1, "*His roast is completely engulfed!*");
     }
     if(grumpy==false) {
+      gbitmap_destroy(s_res_frame1_bmp);
+      s_res_frame2_bmp = gbitmap_create_with_resource(RESOURCE_ID_FRAME_TWO);
+      bitmap_layer_set_bitmap(s_bitmaplayer_2, s_res_frame2_bmp);
       text_layer_set_text(s_textlayer_4, "");
-      text_layer_set_text(s_textlayer_1, "Chalmers leaves to the dining table*");
+      text_layer_set_text(s_textlayer_1, "*Seymour leaves to the kitched, and");
     }
   }
   if (currentText == 5) {
@@ -198,11 +199,8 @@ void continueDialogue(void) {
       text_layer_set_text(s_textlayer_3, "Purchase chinese food");
     }
     if(grumpy==false) {
-      gbitmap_destroy(s_res_frame2_bmp);
-      s_res_frame3_bmp = gbitmap_create_with_resource(RESOURCE_ID_FRAME_THREE);
-      bitmap_layer_set_bitmap(s_bitmaplayer_2, s_res_frame3_bmp);
-      text_layer_set_text(s_textlayer_4, "Seymour");
-      text_layer_set_text(s_textlayer_1, "*His roast is completely engulfed!*");
+      text_layer_set_text(s_textlayer_4, "");
+      text_layer_set_text(s_textlayer_1, "Chalmers leaves to the dining table*");
     }
   }
   if (currentText == 6) {
@@ -221,6 +219,19 @@ void continueDialogue(void) {
             text_layer_set_text(s_textlayer_4, "Seymour");
             text_layer_set_text(s_textlayer_1, "What if I were to purchase chinese");
           }
+    }  
+    if(grumpy==false) {
+      gbitmap_destroy(s_res_frame2_bmp);
+      s_res_frame3_bmp = gbitmap_create_with_resource(RESOURCE_ID_FRAME_THREE);
+      bitmap_layer_set_bitmap(s_bitmaplayer_2, s_res_frame3_bmp);
+      text_layer_set_text(s_textlayer_4, "Seymour");
+      text_layer_set_text(s_textlayer_1, "*His roast is completely engulfed!*");
+    }
+  }
+    if (currentText == 7) {
+        if(grumpy==true) {
+      text_layer_set_text(s_textlayer_4, "Seymour");
+      text_layer_set_text(s_textlayer_1, "food and desguise it as my own cooking?");
     }
     if(grumpy==false) {
       text_layer_set_text(s_textlayer_4, "Seymour");
@@ -229,6 +240,31 @@ void continueDialogue(void) {
       text_layer_set_text(s_textlayer_2, "Purchase hamburgers");
       text_layer_set_text(s_textlayer_3, "Own up");
     }
+  }
+    if (currentText == 8) {
+    if(grumpy==true) {
+      gbitmap_destroy(s_res_frame4_bmp);
+      s_res_frame4_bmp = gbitmap_create_with_resource(RESOURCE_ID_FRAME_FIVE);
+      bitmap_layer_set_bitmap(s_bitmaplayer_2, s_res_frame5_bmp);
+      text_layer_set_text(s_textlayer_4, "Seymour");
+      text_layer_set_text(s_textlayer_1, "Hohoho, delightfully devilish, Seymour!");
+    }
+     if(grumpy==false) {
+          if(currChoice==0) {
+            gbitmap_destroy(s_res_frame3_bmp);
+            s_res_frame4_bmp = gbitmap_create_with_resource(RESOURCE_ID_FRAME_FOUR);
+            bitmap_layer_set_bitmap(s_bitmaplayer_2, s_res_frame4_bmp);
+            text_layer_set_text(s_textlayer_4, "Seymour");
+            text_layer_set_text(s_textlayer_1, "What if I were to purchase fast");
+          }
+          if(currChoice==1) {
+            gbitmap_destroy(s_res_frame3_bmp);
+            s_res_frame4_bmp = gbitmap_create_with_resource(RESOURCE_ID_FRAME_FOUR);
+            bitmap_layer_set_bitmap(s_bitmaplayer_2, s_res_frame4_bmp);
+            text_layer_set_text(s_textlayer_4, "Seymour");
+            text_layer_set_text(s_textlayer_1, "I suppose I may have to tell the Superintendent");
+          }
+    }  
   }
   APP_LOG(APP_LOG_LEVEL_DEBUG, "Continued Dialogue");
   APP_LOG(APP_LOG_LEVEL_DEBUG, "choiceAcitve is %d", choiceActive);

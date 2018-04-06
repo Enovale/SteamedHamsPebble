@@ -11,6 +11,12 @@
         "resources": {
             "media": [
                 {
+                    "file": "images/frame5.png",
+                    "name": "FRAME_FIVE",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
                     "file": "images/frame4.png",
                     "name": "FRAME_FOUR",
                     "targetPlatforms": null,
