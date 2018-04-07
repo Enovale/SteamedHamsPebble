@@ -10,6 +10,7 @@ static TextLayer *s_textlayer_1;
 static TextLayer *s_textlayer_2;
 static TextLayer *s_textlayer_3;
 static BitmapLayer *s_bitmaplayer_1;
+static TextLayer *s_textlayer_4;
 
 static void initialise_ui(void) {
   s_window = window_create();
@@ -43,6 +44,11 @@ static void initialise_ui(void) {
   s_bitmaplayer_1 = bitmap_layer_create(GRect(-4, 77, 156, 7));
   bitmap_layer_set_bitmap(s_bitmaplayer_1, s_res_img_separator);
   layer_add_child(window_get_root_layer(s_window), (Layer *)s_bitmaplayer_1);
+  
+  // s_textlayer_4
+  s_textlayer_4 = text_layer_create(GRect(61, 152, 100, 20));
+  text_layer_set_text(s_textlayer_4, "Press select >");
+  layer_add_child(window_get_root_layer(s_window), (Layer *)s_textlayer_4);
 }
 
 static void destroy_ui(void) {
@@ -51,6 +57,7 @@ static void destroy_ui(void) {
   text_layer_destroy(s_textlayer_2);
   text_layer_destroy(s_textlayer_3);
   bitmap_layer_destroy(s_bitmaplayer_1);
+  text_layer_destroy(s_textlayer_4);
   gbitmap_destroy(s_res_img_separator);
 }
 // END AUTO-GENERATED UI CODE

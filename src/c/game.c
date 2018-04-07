@@ -1,4 +1,5 @@
-#include <pebble.h>
+
+#include <pebble.h> 
 #include "game.h"
 #include "main.h"
 
@@ -6,95 +7,98 @@ int currChoice;
 bool choiceActive = true;
 int currentText;
 bool grumpy;
-GBitmap *s_res_frame1_bmp;
-GBitmap *s_res_frame2_bmp;
-GBitmap *s_res_frame3_bmp;
-GBitmap *s_res_frame4_bmp;
-GBitmap *s_res_frame5_bmp;
-GBitmap *s_res_frame6_bmp;
-GBitmap *s_res_frame7_bmp;
-GBitmap *s_res_frame8_bmp;
-GBitmap *s_res_frame28_bmp;
+bool chinese;
+GBitmap * s_res_frame1_bmp;
+GBitmap * s_res_frame2_bmp;
+GBitmap * s_res_frame3_bmp;
+GBitmap * s_res_frame4_bmp;
+GBitmap * s_res_frame5_bmp;
+GBitmap * s_res_frame6_bmp;
+GBitmap * s_res_frame7_bmp;
+GBitmap * s_res_frame8_bmp;
+GBitmap * s_res_frame9_bmp;
+GBitmap * s_res_frame10_bmp;
+GBitmap * s_res_frame28_bmp;
 // BEGIN AUTO-GENERATED UI CODE; DO NOT MODIFY
-static Window *s_window;
-static GBitmap *s_res_dialogue_bmp;
+static Window * s_window;
+static GBitmap * s_res_dialogue_bmp;
 static GFont s_res_gothic_14;
-static GBitmap *s_res_frame_one;
-static BitmapLayer *s_bitmaplayer_2;
-static BitmapLayer *s_bitmaplayer_1;
-static BitmapLayer *s_bitmaplayer_3;
-static TextLayer *s_textlayer_3;
-static TextLayer *s_textlayer_2;
-static TextLayer *s_textlayer_1;
-static TextLayer *s_textlayer_4;
+static GBitmap * s_res_frame_one;
+static BitmapLayer * s_bitmaplayer_2;
+static BitmapLayer * s_bitmaplayer_1;
+static BitmapLayer * s_bitmaplayer_3;
+static TextLayer * s_textlayer_3;
+static TextLayer * s_textlayer_2;
+static TextLayer * s_textlayer_1;
+static TextLayer * s_textlayer_4;
 
 static void initialise_ui(void) {
   s_window = window_create();
   #ifndef PBL_SDK_3
-    window_set_fullscreen(s_window, true);
+  window_set_fullscreen(s_window, true);
   #endif
-  
+
   s_res_dialogue_bmp = gbitmap_create_with_resource(RESOURCE_ID_DIALOGUE_BMP);
   s_res_gothic_14 = fonts_get_system_font(FONT_KEY_GOTHIC_14);
   s_res_frame_one = gbitmap_create_with_resource(RESOURCE_ID_FRAME_ONE);
   // s_bitmaplayer_2
   s_bitmaplayer_2 = bitmap_layer_create(GRect(0, 0, 146, 120));
   bitmap_layer_set_bitmap(s_bitmaplayer_2, s_res_frame_one);
-  layer_add_child(window_get_root_layer(s_window), (Layer *)s_bitmaplayer_2);
-  
+  layer_add_child(window_get_root_layer(s_window), (Layer * ) s_bitmaplayer_2);
+
   // s_bitmaplayer_1
   s_bitmaplayer_1 = bitmap_layer_create(GRect(0, 118, 144, 50));
   bitmap_layer_set_bitmap(s_bitmaplayer_1, s_res_dialogue_bmp);
-  layer_add_child(window_get_root_layer(s_window), (Layer *)s_bitmaplayer_1);
-  
+  layer_add_child(window_get_root_layer(s_window), (Layer * ) s_bitmaplayer_1);
+
   // s_bitmaplayer_3
   s_bitmaplayer_3 = bitmap_layer_create(GRect(0, 79, 144, 40));
   bitmap_layer_set_bitmap(s_bitmaplayer_3, s_res_dialogue_bmp);
-  layer_add_child(window_get_root_layer(s_window), (Layer *)s_bitmaplayer_3);
-  
+  layer_add_child(window_get_root_layer(s_window), (Layer * ) s_bitmaplayer_3);
+
   // s_textlayer_3
   s_textlayer_3 = text_layer_create(GRect(7, 102, 131, 15));
   text_layer_set_background_color(s_textlayer_3, GColorClear);
   text_layer_set_text(s_textlayer_3, "Here");
   text_layer_set_font(s_textlayer_3, s_res_gothic_14);
-  layer_add_child(window_get_root_layer(s_window), (Layer *)s_textlayer_3);
-  
+  layer_add_child(window_get_root_layer(s_window), (Layer * ) s_textlayer_3);
+
   // s_textlayer_2
   s_textlayer_2 = text_layer_create(GRect(7, 85, 130, 17));
   text_layer_set_background_color(s_textlayer_2, GColorClear);
   text_layer_set_text(s_textlayer_2, "There should be choices");
   text_layer_set_font(s_textlayer_2, s_res_gothic_14);
-  layer_add_child(window_get_root_layer(s_window), (Layer *)s_textlayer_2);
-  
+  layer_add_child(window_get_root_layer(s_window), (Layer * ) s_textlayer_2);
+
   // s_textlayer_1
   s_textlayer_1 = text_layer_create(GRect(8, 133, 130, 29));
   text_layer_set_background_color(s_textlayer_1, GColorClear);
   text_layer_set_text(s_textlayer_1, "Rip dialogue?");
   text_layer_set_font(s_textlayer_1, s_res_gothic_14);
-  layer_add_child(window_get_root_layer(s_window), (Layer *)s_textlayer_1);
-  
+  layer_add_child(window_get_root_layer(s_window), (Layer * ) s_textlayer_1);
+
   // s_textlayer_4
   s_textlayer_4 = text_layer_create(GRect(9, 122, 129, 15));
   text_layer_set_background_color(s_textlayer_4, GColorClear);
   text_layer_set_text(s_textlayer_4, "Name");
-  layer_add_child(window_get_root_layer(s_window), (Layer *)s_textlayer_4);
+  layer_add_child(window_get_root_layer(s_window), (Layer * ) s_textlayer_4);
 }
 
 static void destroy_ui(void) {
-  window_destroy(s_window);
-  bitmap_layer_destroy(s_bitmaplayer_2);
-  bitmap_layer_destroy(s_bitmaplayer_1);
-  bitmap_layer_destroy(s_bitmaplayer_3);
-  text_layer_destroy(s_textlayer_3);
-  text_layer_destroy(s_textlayer_2);
-  text_layer_destroy(s_textlayer_1);
-  text_layer_destroy(s_textlayer_4);
-  gbitmap_destroy(s_res_dialogue_bmp);
-  gbitmap_destroy(s_res_frame_one);
-}
-// END AUTO-GENERATED UI CODE
+    window_destroy(s_window);
+    bitmap_layer_destroy(s_bitmaplayer_2);
+    bitmap_layer_destroy(s_bitmaplayer_1);
+    bitmap_layer_destroy(s_bitmaplayer_3);
+    text_layer_destroy(s_textlayer_3);
+    text_layer_destroy(s_textlayer_2);
+    text_layer_destroy(s_textlayer_1);
+    text_layer_destroy(s_textlayer_4);
+    gbitmap_destroy(s_res_dialogue_bmp);
+    gbitmap_destroy(s_res_frame_one);
+  }
+  // END AUTO-GENERATED UI CODE
 
-static void handle_window_unload(Window* window) {
+static void handle_window_unload(Window * window) {
   destroy_ui();
 }
 
@@ -122,11 +126,11 @@ void hideChoices(void) {
 
 void continueDialogue(void) {
   currentText++;
-  if(choiceActive==true) {
+  if (choiceActive == true) {
     hideChoices();
   }
   hideChoices();
-  if(currentText==-1) {
+  if (currentText == -1) {
     text_layer_set_text(s_textlayer_1, "Well Seymour, I made it, despite your directions.");
     text_layer_set_text(s_textlayer_4, "Chalmers");
     presentChoices();
@@ -135,59 +139,59 @@ void continueDialogue(void) {
     text_layer_set_text(s_textlayer_3, "Hey.");
   }
   if (currentText == 0) {
-    if(currChoice == 1) {
-        text_layer_set_text(s_textlayer_4, "Seymour");
-        text_layer_set_text(s_textlayer_1, "Oh. You're here. Come in, I suppose.");
-        grumpy = true;
+    if (currChoice == 1) {
+      text_layer_set_text(s_textlayer_4, "Seymour");
+      text_layer_set_text(s_textlayer_1, "Oh. You're here. Come in, I suppose.");
+      grumpy = true;
     }
-    if(currChoice == 0){
+    if (currChoice == 0) {
       text_layer_set_text(s_textlayer_4, "Seymour");
       text_layer_set_text(s_textlayer_1, "Ah, Superintendent Chalmers welcome! I");
       grumpy = false;
     }
   }
   if (currentText == 1) {
-    if(grumpy==true) {
+    if (grumpy == true) {
       text_layer_set_text(s_textlayer_4, "Chalmers");
       text_layer_set_text(s_textlayer_1, "Quite rude, Skinner.");
     }
-    if(grumpy==false) {
+    if (grumpy == false) {
       text_layer_set_text(s_textlayer_4, "Seymour");
       text_layer_set_text(s_textlayer_1, "hope you're prepared for an unforgettable");
     }
   }
-    if (currentText == 2) {
-    if(grumpy==true) {
+  if (currentText == 2) {
+    if (grumpy == true) {
       gbitmap_destroy(s_res_frame1_bmp);
       s_res_frame2_bmp = gbitmap_create_with_resource(RESOURCE_ID_FRAME_TWO);
       bitmap_layer_set_bitmap(s_bitmaplayer_2, s_res_frame2_bmp);
       text_layer_set_text(s_textlayer_4, "");
       text_layer_set_text(s_textlayer_1, "*Seymour leaves to the kitched, and");
     }
-    if(grumpy==false) {
+    if (grumpy == false) {
       text_layer_set_text(s_textlayer_4, "Seymour");
       text_layer_set_text(s_textlayer_1, "luncheon!");
     }
-    }
-      if (currentText == 3) {
-        if(grumpy==true) {
+  }
+  if (currentText == 3) {
+    if (grumpy == true) {
       text_layer_set_text(s_textlayer_4, "");
       text_layer_set_text(s_textlayer_1, "Chalmers leaves to the dining table*");
     }
-    if(grumpy==false) {
+    if (grumpy == false) {
       text_layer_set_text(s_textlayer_4, "Chalmers");
       text_layer_set_text(s_textlayer_1, "Yeah.");
     }
   }
   if (currentText == 4) {
-        if(grumpy==true) {
+    if (grumpy == true) {
       text_layer_set_text(s_textlayer_4, "Seymour");
       gbitmap_destroy(s_res_frame2_bmp);
       s_res_frame3_bmp = gbitmap_create_with_resource(RESOURCE_ID_FRAME_THREE);
       bitmap_layer_set_bitmap(s_bitmaplayer_2, s_res_frame3_bmp);
       text_layer_set_text(s_textlayer_1, "*His roast is completely engulfed!*");
     }
-    if(grumpy==false) {
+    if (grumpy == false) {
       gbitmap_destroy(s_res_frame1_bmp);
       s_res_frame2_bmp = gbitmap_create_with_resource(RESOURCE_ID_FRAME_TWO);
       bitmap_layer_set_bitmap(s_bitmaplayer_2, s_res_frame2_bmp);
@@ -196,36 +200,38 @@ void continueDialogue(void) {
     }
   }
   if (currentText == 5) {
-        if(grumpy==true) {
+    if (grumpy == true) {
       text_layer_set_text(s_textlayer_4, "Seymour");
       text_layer_set_text(s_textlayer_1, "Oh egads! My roast is ruined!");
       presentChoices();
       text_layer_set_text(s_textlayer_2, "Purchase hamburgers");
       text_layer_set_text(s_textlayer_3, "Purchase chinese food");
     }
-    if(grumpy==false) {
+    if (grumpy == false) {
       text_layer_set_text(s_textlayer_4, "");
       text_layer_set_text(s_textlayer_1, "Chalmers leaves to the dining table*");
     }
   }
   if (currentText == 6) {
-     if(grumpy==true) {
-          if(currChoice==0) {
-            gbitmap_destroy(s_res_frame3_bmp);
-            s_res_frame4_bmp = gbitmap_create_with_resource(RESOURCE_ID_FRAME_FOUR);
-            bitmap_layer_set_bitmap(s_bitmaplayer_2, s_res_frame4_bmp);
-            text_layer_set_text(s_textlayer_4, "Seymour");
-            text_layer_set_text(s_textlayer_1, "What if I were to purchase fast");
-          }
-          if(currChoice==1) {
-            gbitmap_destroy(s_res_frame3_bmp);
-            s_res_frame4_bmp = gbitmap_create_with_resource(RESOURCE_ID_FRAME_FOUR);
-            bitmap_layer_set_bitmap(s_bitmaplayer_2, s_res_frame4_bmp);
-            text_layer_set_text(s_textlayer_4, "Seymour");
-            text_layer_set_text(s_textlayer_1, "What if I were to purchase chinese");
-          }
-    }  
-    if(grumpy==false) {
+    if (grumpy == true) {
+      if (currChoice == 0) {
+        chinese = false;
+        gbitmap_destroy(s_res_frame3_bmp);
+        s_res_frame4_bmp = gbitmap_create_with_resource(RESOURCE_ID_FRAME_FOUR);
+        bitmap_layer_set_bitmap(s_bitmaplayer_2, s_res_frame4_bmp);
+        text_layer_set_text(s_textlayer_4, "Seymour");
+        text_layer_set_text(s_textlayer_1, "What if I were to purchase fast");
+      }
+      if (currChoice == 1) {
+        chinese = true;
+        gbitmap_destroy(s_res_frame3_bmp);
+        s_res_frame4_bmp = gbitmap_create_with_resource(RESOURCE_ID_FRAME_FOUR);
+        bitmap_layer_set_bitmap(s_bitmaplayer_2, s_res_frame4_bmp);
+        text_layer_set_text(s_textlayer_4, "Seymour");
+        text_layer_set_text(s_textlayer_1, "What if I were to purchase chinese");
+      }
+    }
+    if (grumpy == false) {
       gbitmap_destroy(s_res_frame2_bmp);
       s_res_frame3_bmp = gbitmap_create_with_resource(RESOURCE_ID_FRAME_THREE);
       bitmap_layer_set_bitmap(s_bitmaplayer_2, s_res_frame3_bmp);
@@ -233,12 +239,12 @@ void continueDialogue(void) {
       text_layer_set_text(s_textlayer_1, "*His roast is completely engulfed!*");
     }
   }
-    if (currentText == 7) {
-        if(grumpy==true) {
+  if (currentText == 7) {
+    if (grumpy == true) {
       text_layer_set_text(s_textlayer_4, "Seymour");
       text_layer_set_text(s_textlayer_1, "food and desguise it as my own cooking?");
     }
-    if(grumpy==false) {
+    if (grumpy == false) {
       text_layer_set_text(s_textlayer_4, "Seymour");
       text_layer_set_text(s_textlayer_1, "Oh egads! My roast is ruined!");
       presentChoices();
@@ -246,129 +252,176 @@ void continueDialogue(void) {
       text_layer_set_text(s_textlayer_3, "Own up");
     }
   }
-    if (currentText == 8) {
-    if(grumpy==true) {
+  if (currentText == 8) {
+    if (grumpy == true) {
       gbitmap_destroy(s_res_frame4_bmp);
       s_res_frame5_bmp = gbitmap_create_with_resource(RESOURCE_ID_FRAME_FIVE);
       bitmap_layer_set_bitmap(s_bitmaplayer_2, s_res_frame5_bmp);
       text_layer_set_text(s_textlayer_4, "Seymour");
       text_layer_set_text(s_textlayer_1, "Hohoho, delightfully devilish, Seymour!");
     }
-     if(grumpy==false) {
-          if(currChoice==0) {
-            gbitmap_destroy(s_res_frame3_bmp);
-            s_res_frame4_bmp = gbitmap_create_with_resource(RESOURCE_ID_FRAME_FOUR);
-            bitmap_layer_set_bitmap(s_bitmaplayer_2, s_res_frame4_bmp);
-            text_layer_set_text(s_textlayer_4, "Seymour");
-            text_layer_set_text(s_textlayer_1, "What if I were to purchase fast");
-          }
-          if(currChoice==1) {
-            gbitmap_destroy(s_res_frame3_bmp);
-            s_res_frame4_bmp = gbitmap_create_with_resource(RESOURCE_ID_FRAME_FOUR);
-            bitmap_layer_set_bitmap(s_bitmaplayer_2, s_res_frame4_bmp);
-            text_layer_set_text(s_textlayer_4, "Seymour");
-            text_layer_set_text(s_textlayer_1, "I suppose I may have to tell the Superintendent");
-          }
-    }  
+    if (grumpy == false) {
+      if (currChoice == 0) {
+        gbitmap_destroy(s_res_frame3_bmp);
+        s_res_frame4_bmp = gbitmap_create_with_resource(RESOURCE_ID_FRAME_FOUR);
+        bitmap_layer_set_bitmap(s_bitmaplayer_2, s_res_frame4_bmp);
+        text_layer_set_text(s_textlayer_4, "Seymour");
+        text_layer_set_text(s_textlayer_1, "What if I were to purchase fast");
+      }
+      if (currChoice == 1) {
+        gbitmap_destroy(s_res_frame3_bmp);
+        s_res_frame4_bmp = gbitmap_create_with_resource(RESOURCE_ID_FRAME_FOUR);
+        bitmap_layer_set_bitmap(s_bitmaplayer_2, s_res_frame4_bmp);
+        text_layer_set_text(s_textlayer_4, "Seymour");
+        text_layer_set_text(s_textlayer_1, "I suppose I may have to tell the Superintendent");
+      }
+    }
   }
   if (currentText == 9) {
-    if(grumpy==true) {
+    if (grumpy == true) {
       gbitmap_destroy(s_res_frame5_bmp);
       s_res_frame6_bmp = gbitmap_create_with_resource(RESOURCE_ID_FRAME_SIX);
       bitmap_layer_set_bitmap(s_bitmaplayer_2, s_res_frame6_bmp);
       text_layer_set_text(s_textlayer_4, "Seymour");
       text_layer_set_text(s_textlayer_1, "*Seymour goes to exit the kitchen via window*");
     }
-     if(grumpy==false) {
-          if(currChoice==0) {
-            gbitmap_destroy(s_res_frame3_bmp);
-            s_res_frame4_bmp = gbitmap_create_with_resource(RESOURCE_ID_FRAME_FOUR);
-            bitmap_layer_set_bitmap(s_bitmaplayer_2, s_res_frame4_bmp);
-            text_layer_set_text(s_textlayer_4, "Seymour");
-            text_layer_set_text(s_textlayer_1, "What if I were to purchase fast");
-          }
-          if(currChoice==1) {
-            gbitmap_destroy(s_res_frame3_bmp);
-            s_res_frame4_bmp = gbitmap_create_with_resource(RESOURCE_ID_FRAME_FOUR);
-            bitmap_layer_set_bitmap(s_bitmaplayer_2, s_res_frame4_bmp);
-            text_layer_set_text(s_textlayer_4, "Seymour");
-            text_layer_set_text(s_textlayer_1, "I suppose I may have to tell the Superintendent");
-          }
-    }  
+    if (grumpy == false) {
+      if (currChoice == 0) {
+        gbitmap_destroy(s_res_frame3_bmp);
+        s_res_frame4_bmp = gbitmap_create_with_resource(RESOURCE_ID_FRAME_FOUR);
+        bitmap_layer_set_bitmap(s_bitmaplayer_2, s_res_frame4_bmp);
+        text_layer_set_text(s_textlayer_4, "Seymour");
+        text_layer_set_text(s_textlayer_1, "What if I were to purchase fast");
+      }
+      if (currChoice == 1) {
+        gbitmap_destroy(s_res_frame3_bmp);
+        s_res_frame4_bmp = gbitmap_create_with_resource(RESOURCE_ID_FRAME_FOUR);
+        bitmap_layer_set_bitmap(s_bitmaplayer_2, s_res_frame4_bmp);
+        text_layer_set_text(s_textlayer_4, "Seymour");
+        text_layer_set_text(s_textlayer_1, "I suppose I may have to tell the Superintendent");
+      }
+    }
   }
-    if (currentText == 10) {
-    if(grumpy==true) {
+  if (currentText == 10) {
+    if (grumpy == true) {
       gbitmap_destroy(s_res_frame6_bmp);
       s_res_frame7_bmp = gbitmap_create_with_resource(RESOURCE_ID_FRAME_SEVEN);
       bitmap_layer_set_bitmap(s_bitmaplayer_2, s_res_frame7_bmp);
       text_layer_set_text(s_textlayer_4, "Chalmers");
       text_layer_set_text(s_textlayer_1, "I-");
     }
-     if(grumpy==false) {
-          if(currChoice==0) {
-            gbitmap_destroy(s_res_frame4_bmp);
-            s_res_frame5_bmp = gbitmap_create_with_resource(RESOURCE_ID_FRAME_FIVE);
-            bitmap_layer_set_bitmap(s_bitmaplayer_2, s_res_frame5_bmp);
-            text_layer_set_text(s_textlayer_4, "Seymour");
-            text_layer_set_text(s_textlayer_1, "Hohoho, delightfully devilish, Seymour!");
-          }
-          if(currChoice==1) {
-            text_layer_set_text(s_textlayer_4, "Seymour");
-            text_layer_set_text(s_textlayer_1, "about the ruined roast. *Leaves to meet him*");
-          }
-    }  
+    if (grumpy == false) {
+      if (currChoice == 0) {
+        gbitmap_destroy(s_res_frame4_bmp);
+        s_res_frame5_bmp = gbitmap_create_with_resource(RESOURCE_ID_FRAME_FIVE);
+        bitmap_layer_set_bitmap(s_bitmaplayer_2, s_res_frame5_bmp);
+        text_layer_set_text(s_textlayer_4, "Seymour");
+        text_layer_set_text(s_textlayer_1, "Hohoho, delightfully devilish, Seymour!");
+      }
+      if (currChoice == 1) {
+        text_layer_set_text(s_textlayer_4, "Seymour");
+        text_layer_set_text(s_textlayer_1, "about the ruined roast. *Leaves to meet him*");
+      }
+    }
   }
- if (currentText == 11) {
-    if(grumpy==true) {
+  if (currentText == 11) {
+    if (grumpy == true) {
       gbitmap_destroy(s_res_frame7_bmp);
       s_res_frame8_bmp = gbitmap_create_with_resource(RESOURCE_ID_FRAME_EIGHT);
       bitmap_layer_set_bitmap(s_bitmaplayer_2, s_res_frame8_bmp);
       text_layer_set_text(s_textlayer_4, "Chalmers");
       text_layer_set_text(s_textlayer_1, "SEEYYYYYYMMMOUR!");
     }
-     if(grumpy==false) {
-          if(currChoice==0) {
-           gbitmap_destroy(s_res_frame5_bmp);
-            s_res_frame6_bmp = gbitmap_create_with_resource(RESOURCE_ID_FRAME_SIX);
-            bitmap_layer_set_bitmap(s_bitmaplayer_2, s_res_frame6_bmp);
-            text_layer_set_text(s_textlayer_4, "Seymour");
-            text_layer_set_text(s_textlayer_1, "*Goes to leave kitchen via window*");
-          }
-          if(currChoice==1) {
-            gbitmap_destroy(s_res_frame5_bmp);
-            s_res_frame28_bmp = gbitmap_create_with_resource(RESOURCE_ID_FRAME_TWENTY_EIGHT);
-            bitmap_layer_set_bitmap(s_bitmaplayer_2, s_res_frame28_bmp);
-            text_layer_set_text(s_textlayer_4, "Seymour");
-            text_layer_set_text(s_textlayer_1, "Superintendent, I'm afraid the roast is ruined.");
-          }
-    }  
+    if (grumpy == false) {
+      if (currChoice == 0) {
+        gbitmap_destroy(s_res_frame5_bmp);
+        s_res_frame6_bmp = gbitmap_create_with_resource(RESOURCE_ID_FRAME_SIX);
+        bitmap_layer_set_bitmap(s_bitmaplayer_2, s_res_frame6_bmp);
+        text_layer_set_text(s_textlayer_4, "Seymour");
+        text_layer_set_text(s_textlayer_1, "*Goes to leave kitchen via window*");
+      }
+      if (currChoice == 1) {
+        gbitmap_destroy(s_res_frame5_bmp);
+        s_res_frame28_bmp = gbitmap_create_with_resource(RESOURCE_ID_FRAME_TWENTY_EIGHT);
+        bitmap_layer_set_bitmap(s_bitmaplayer_2, s_res_frame28_bmp);
+        text_layer_set_text(s_textlayer_4, "Seymour");
+        text_layer_set_text(s_textlayer_1, "Superintendent, I'm afraid the roast is ruined.");
+      }
+    }
+  }
+  if (currentText == 12) {
+    if (grumpy == true) {
+      gbitmap_destroy(s_res_frame7_bmp);
+      s_res_frame8_bmp = gbitmap_create_with_resource(RESOURCE_ID_FRAME_EIGHT);
+      bitmap_layer_set_bitmap(s_bitmaplayer_2, s_res_frame8_bmp);
+      text_layer_set_text(s_textlayer_4, "Seymour");
+      text_layer_set_text(s_textlayer_1, "SUPERINTENDENT! I was just- uh-");
+    }
+    if (grumpy == false) {
+      if (currChoice == 0) {
+        gbitmap_destroy(s_res_frame6_bmp);
+        s_res_frame7_bmp = gbitmap_create_with_resource(RESOURCE_ID_FRAME_SEVEN);
+        bitmap_layer_set_bitmap(s_bitmaplayer_2, s_res_frame7_bmp);
+        text_layer_set_text(s_textlayer_4, "Chalmers");
+        text_layer_set_text(s_textlayer_1, "I-");
+      }
+      if (currChoice == 1) {
+        gbitmap_destroy(s_res_frame28_bmp);
+        s_res_frame9_bmp = gbitmap_create_with_resource(RESOURCE_ID_FRAME_NINE);
+        bitmap_layer_set_bitmap(s_bitmaplayer_2, s_res_frame9_bmp);
+        text_layer_set_text(s_textlayer_4, "Chalmers");
+        text_layer_set_text(s_textlayer_1, "It is, is it? That is unfortunate.");
+      }
+    }
+  }
+  if (currentText == 13) {
+    if (grumpy == true) {
+      gbitmap_destroy(s_res_frame8_bmp);
+      s_res_frame10_bmp = gbitmap_create_with_resource(RESOURCE_ID_FRAME_TEN);
+      bitmap_layer_set_bitmap(s_bitmaplayer_2, s_res_frame10_bmp);
+      text_layer_set_text(s_textlayer_4, "Seymour");
+      text_layer_set_text(s_textlayer_1, "Stretching my calfs on the windowsill!");
+    }
+    if (grumpy == false) {
+      if (currChoice == 0) {
+        gbitmap_destroy(s_res_frame7_bmp);
+        s_res_frame8_bmp = gbitmap_create_with_resource(RESOURCE_ID_FRAME_EIGHT);
+        bitmap_layer_set_bitmap(s_bitmaplayer_2, s_res_frame8_bmp);
+        text_layer_set_text(s_textlayer_4, "Chalmers");
+        text_layer_set_text(s_textlayer_1, "SEEYYYYYYMMMOUR!");
+      }
+      if (currChoice == 1) {
+        text_layer_set_text(s_textlayer_4, "Chalmers");
+        text_layer_set_text(s_textlayer_1, "Well I suppose we'll have to get another!");
+      }
+    }
   }
   APP_LOG(APP_LOG_LEVEL_DEBUG, "Continued Dialogue");
   APP_LOG(APP_LOG_LEVEL_DEBUG, "choiceAcitve is %d", choiceActive);
 }
 
-void select_click_handler(ClickRecognizerRef recognizer, void *context) {
+void select_click_handler(ClickRecognizerRef recognizer, void * context) {
   if (choiceActive == false) {
     continueDialogue();
   }
 }
 
-void down_click_handler(ClickRecognizerRef recognizer, void *context) {
+void down_click_handler(ClickRecognizerRef recognizer, void * context) {
   if (choiceActive == true) {
     currChoice = 1;
     continueDialogue();
   }
 }
 
-void up_click_handler(ClickRecognizerRef recognizer, void *context) {
+void up_click_handler(ClickRecognizerRef recognizer, void * context) {
   if (choiceActive == true) {
     currChoice = 0;
     continueDialogue();
   }
 }
 
-void game_config_provider(Window *window) {
- // single click / repeat-on-hold config:
+void game_config_provider(Window * window) {
+  // single click / repeat-on-hold config:
   window_single_click_subscribe(BUTTON_ID_SELECT, select_click_handler);
   window_single_click_subscribe(BUTTON_ID_DOWN, down_click_handler);
   window_single_click_subscribe(BUTTON_ID_UP, up_click_handler);
@@ -376,6 +429,7 @@ void game_config_provider(Window *window) {
 
 void start_game(void) {
   show_menu();
+  chinese = false;
   choiceActive = false;
   currentText = -2;
   window_set_click_config_provider(s_window, (ClickConfigProvider) game_config_provider);

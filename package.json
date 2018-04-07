@@ -11,6 +11,30 @@
         "resources": {
             "media": [
                 {
+                    "file": "images/funeral1.png",
+                    "name": "FUNERAL_ONE",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/funeral2.png",
+                    "name": "FUNERAL_TWO",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/frame10.png",
+                    "name": "FRAME_TEN",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/frame9.png",
+                    "name": "FRAME_NINE",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
                     "file": "images/frame28.png",
                     "name": "FRAME_TWENTY_EIGHT",
                     "targetPlatforms": null,
