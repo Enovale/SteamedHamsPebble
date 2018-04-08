@@ -11,8 +11,27 @@
         "resources": {
             "media": [
                 {
-                    "file": "images/funeral1.png",
-                    "name": "FUNERAL_ONE",
+                    "file": "images/separator.png",
+                    "name": "IMG_SEPARATOR",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/play.png",
+                    "name": "PLAY_BUTTON",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/logo.pg",
+                    "name": "MENU_LOGO",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/icon.png",
+                    "menuIcon": true,
+                    "name": "GAME_ICON",
                     "targetPlatforms": null,
                     "type": "bitmap"
                 },
@@ -23,20 +42,14 @@
                     "type": "bitmap"
                 },
                 {
-                    "file": "images/frame10.png",
-                    "name": "FRAME_TEN",
+                    "file": "images/funeral1.png",
+                    "name": "FUNERAL_ONE",
                     "targetPlatforms": null,
                     "type": "bitmap"
                 },
                 {
                     "file": "images/frame9.png",
                     "name": "FRAME_NINE",
-                    "targetPlatforms": null,
-                    "type": "bitmap"
-                },
-                {
-                    "file": "images/frame28.png",
-                    "name": "FRAME_TWENTY_EIGHT",
                     "targetPlatforms": null,
                     "type": "bitmap"
                 },
@@ -71,31 +84,6 @@
                     "type": "bitmap"
                 },
                 {
-                    "file": "images/separator.png",
-                    "name": "IMG_SEPARATOR",
-                    "targetPlatforms": null,
-                    "type": "bitmap"
-                },
-                {
-                    "file": "images/play.png",
-                    "name": "PLAY_BUTTON",
-                    "targetPlatforms": null,
-                    "type": "bitmap"
-                },
-                {
-                    "file": "images/logo.pg",
-                    "name": "MENU_LOGO",
-                    "targetPlatforms": null,
-                    "type": "bitmap"
-                },
-                {
-                    "file": "images/icon.png",
-                    "menuIcon": true,
-                    "name": "GAME_ICON",
-                    "targetPlatforms": null,
-                    "type": "bitmap"
-                },
-                {
                     "file": "images/frame3.png",
                     "name": "FRAME_THREE",
                     "targetPlatforms": null,
@@ -108,8 +96,20 @@
                     "type": "bitmap"
                 },
                 {
+                    "file": "images/frame28.png",
+                    "name": "FRAME_TWENTY_EIGHT",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
                     "file": "images/frame1.png",
                     "name": "FRAME_ONE",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/frame10.png",
+                    "name": "FRAME_TEN",
                     "targetPlatforms": null,
                     "type": "bitmap"
                 },
