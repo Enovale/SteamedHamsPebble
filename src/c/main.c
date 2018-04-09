@@ -4,6 +4,7 @@
 #include "instructions.h"
 #include "confirmation.h"
 
+bool gameStarted;
 // BEGIN AUTO-GENERATED UI CODE; DO NOT MODIFY
 static Window *s_window_main;
 static GFont s_res_gothic_18_bold;
@@ -99,7 +100,7 @@ void config_provider(Window *window) {
 }
 
 void show_main(void) {
-  persist_write_int(currentText, currentText);
+  gameStarted = true;
   currChoice = 0;
   choiceActive = false;
   grumpy = false;

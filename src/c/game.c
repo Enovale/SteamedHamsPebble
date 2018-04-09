@@ -2,6 +2,7 @@
 #include <pebble.h> 
 #include "game.h"
 #include "main.h"
+#include "extrastory.h"
 
 int currChoice;
 bool choiceActive = true;
@@ -13,6 +14,7 @@ bool normal;
 bool chinese;
 bool stay;
 bool love;
+bool nextFunc;
 GBitmap * s_res_frame1_bmp;
 GBitmap * s_res_frame2_bmp;
 GBitmap * s_res_frame3_bmp;
@@ -139,7 +141,6 @@ void continueDialogue(void) {
   if (choiceActive == true) {
     hideChoices();
   }
-  hideChoices();
   APP_LOG(APP_LOG_LEVEL_DEBUG, "currchoice is %d", currChoice);
   if (currentText == -1) {
     text_layer_set_text(s_textlayer_1, "Well Seymour, I made it, despite your directions.");
@@ -642,8 +643,7 @@ void continueDialogue(void) {
     }
   }
   if (currentText == 24) {
-    if (grumpy == true) {
-      if(stay) {
+    if(stay) {
         text_layer_set_text(s_textlayer_4, "Seymour");
         text_layer_set_text(s_textlayer_1, "*Back at the house, Seymour must choose");
       }
@@ -651,9 +651,7 @@ void continueDialogue(void) {
         text_layer_set_text(s_textlayer_4, "");
         text_layer_set_text(s_textlayer_1, "talk about their lives together*");
       }
-    }
-    if (grumpy == false) {
-      if (normal) {
+   if (normal) {
         text_layer_set_text(s_textlayer_4, "Seymour");
         text_layer_set_text(s_textlayer_1, "No, no! I said steamed hams! That's what");
       }
@@ -661,8 +659,7 @@ void continueDialogue(void) {
         text_layer_set_text(s_textlayer_4, "");
         text_layer_set_text(s_textlayer_1, "*The pair set off on their journey, and");
       }
-    }
-  }
+  }/*
   if (currentText == 25) {
     if (grumpy == true) {
       if(stay) {
@@ -685,15 +682,12 @@ void continueDialogue(void) {
       if (honest) {
         text_layer_set_text(s_textlayer_4, "");
         text_layer_set_text(s_textlayer_1, "encounter a dangerous intersection*");
-        presentChoices();
-        text_layer_set_text(s_textlayer_2, "Split up");
-        text_layer_set_text(s_textlayer_3, "Stay together");
       }
     }
   }
   if (currentText == 26) {
     if (grumpy == true) {
-      if(stay) {
+      if(stay==true) {
         if(currChoice==0) {
           text_layer_set_text(s_textlayer_4, "Seymour");
           text_layer_set_text(s_textlayer_1, "Heres some fries and steak.");
@@ -703,17 +697,42 @@ void continueDialogue(void) {
           text_layer_set_text(s_textlayer_1, "Have some fries and porkchops.");
         }
       }
-      if(love) {
+      if(love==true) {
         text_layer_set_text(s_textlayer_4, "Seymour");
         text_layer_set_text(s_textlayer_1, "Superintendent. I really enjoyed that.");
       }
     }
     if (grumpy == false) {
-      if (normal) {
+      if (normal==true) {
         text_layer_set_text(s_textlayer_4, "Chalmers");
         text_layer_set_text(s_textlayer_1, "You call hamburgers 'Steamed hams'");
       }
-      if (honest) {
+      if (honest==true) {
+        text_layer_set_text(s_textlayer_4, "Seymour");
+        text_layer_set_text(s_textlayer_1, "*Seymour realizes that they must-*");
+        presentChoices();
+        text_layer_set_text(s_textlayer_2, "Split up");
+        text_layer_set_text(s_textlayer_3, "Stay together");
+      }
+    }
+  }
+  if (currentText == 27) {
+    if (grumpy == true) {
+      if(stay==true) {
+          text_layer_set_text(s_textlayer_4, "Seymour");
+          text_layer_set_text(s_textlayer_1, "Have some fries and porkchops.");
+      }
+      if(love==true) {
+        text_layer_set_text(s_textlayer_4, "Seymour");
+        text_layer_set_text(s_textlayer_1, "Superintendent. I really enjoyed that.");
+      }
+    }
+    if (grumpy == false) {
+      if (normal==true) {
+        text_layer_set_text(s_textlayer_4, "Chalmers");
+        text_layer_set_text(s_textlayer_1, "You call hamburgers 'Steamed hams'");
+      }
+      if (honest==true) {
         if(currChoice==0) {
           text_layer_set_text(s_textlayer_4, "Seymour");
           text_layer_set_text(s_textlayer_1, "We should split up, Superintendent!");
@@ -724,14 +743,24 @@ void continueDialogue(void) {
         }
       }
     }
-  }
+  }*/
   APP_LOG(APP_LOG_LEVEL_DEBUG, "Continued Dialogue");
   APP_LOG(APP_LOG_LEVEL_DEBUG, "choiceAcitve is %d", choiceActive);
 }
 
 void select_click_handler(ClickRecognizerRef recognizer, void * context) {
   if (choiceActive == false) {
-    continueDialogue();
+    if(currentText > 24) {
+      currentText = -1;
+      nextFunc = true;
+      continueDialogue2();
+    }
+    if(nextFunc==true) {
+      continueDialogue2();
+    }
+    if(nextFunc==false) {
+      continueDialogue();
+    }
   }
 }
 
@@ -759,6 +788,7 @@ void game_config_provider(Window * window) {
 void start_game(void) {
   show_menu();
   chinese = false;
+  nextFunc = false;
   honest = false;
   stay = false;
   love = false;
