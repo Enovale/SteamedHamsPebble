@@ -117,6 +117,7 @@ void hide_main(void) {
 }
 
 int main() {
+  //Uh
   currentText = -2;
   grumpy = false;
   s_res_frame1_bmp = gbitmap_create_with_resource(RESOURCE_ID_FRAME_ONE);

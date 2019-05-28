@@ -11,20 +11,98 @@
         "resources": {
             "media": [
                 {
-                    "file": "images/separator.png",
-                    "name": "IMG_SEPARATOR",
+                    "file": "fonts/Sans.ttf",
+                    "name": "FONT_OSP_DIN_44",
+                    "targetPlatforms": null,
+                    "type": "font"
+                },
+                {
+                    "file": "images/choice.png",
+                    "name": "CHOICE_BOX_BMP",
                     "targetPlatforms": null,
                     "type": "bitmap"
                 },
                 {
-                    "file": "images/play.png",
-                    "name": "PLAY_BUTTON",
+                    "file": "images/dialogue.png",
+                    "name": "DIALOGUE_BMP",
                     "targetPlatforms": null,
                     "type": "bitmap"
                 },
                 {
-                    "file": "images/logo.pg",
-                    "name": "MENU_LOGO",
+                    "file": "images/frame10.png",
+                    "name": "FRAME_TEN",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/frame1.png",
+                    "name": "FRAME_ONE",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/frame28.png",
+                    "name": "FRAME_TWENTY_EIGHT",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/frame2.png",
+                    "name": "FRAME_TWO",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/frame3.png",
+                    "name": "FRAME_THREE",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/frame4.png",
+                    "name": "FRAME_FOUR",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/frame5.png",
+                    "name": "FRAME_FIVE",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/frame6.png",
+                    "name": "FRAME_SIX",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/frame7.png",
+                    "name": "FRAME_SEVEN",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/frame8.png",
+                    "name": "FRAME_EIGHT",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/frame9.png",
+                    "name": "FRAME_NINE",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/funeral1.png",
+                    "name": "FUNERAL_ONE",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/funeral2.png",
+                    "name": "FUNERAL_TWO",
                     "targetPlatforms": null,
                     "type": "bitmap"
                 },
@@ -36,100 +114,22 @@
                     "type": "bitmap"
                 },
                 {
-                    "file": "images/funeral2.png",
-                    "name": "FUNERAL_TWO",
+                    "file": "images/logo.pg",
+                    "name": "MENU_LOGO",
                     "targetPlatforms": null,
                     "type": "bitmap"
                 },
                 {
-                    "file": "images/funeral1.png",
-                    "name": "FUNERAL_ONE",
+                    "file": "images/play.png",
+                    "name": "PLAY_BUTTON",
                     "targetPlatforms": null,
                     "type": "bitmap"
                 },
                 {
-                    "file": "images/frame9.png",
-                    "name": "FRAME_NINE",
+                    "file": "images/separator.png",
+                    "name": "IMG_SEPARATOR",
                     "targetPlatforms": null,
                     "type": "bitmap"
-                },
-                {
-                    "file": "images/frame8.png",
-                    "name": "FRAME_EIGHT",
-                    "targetPlatforms": null,
-                    "type": "bitmap"
-                },
-                {
-                    "file": "images/frame7.png",
-                    "name": "FRAME_SEVEN",
-                    "targetPlatforms": null,
-                    "type": "bitmap"
-                },
-                {
-                    "file": "images/frame6.png",
-                    "name": "FRAME_SIX",
-                    "targetPlatforms": null,
-                    "type": "bitmap"
-                },
-                {
-                    "file": "images/frame5.png",
-                    "name": "FRAME_FIVE",
-                    "targetPlatforms": null,
-                    "type": "bitmap"
-                },
-                {
-                    "file": "images/frame4.png",
-                    "name": "FRAME_FOUR",
-                    "targetPlatforms": null,
-                    "type": "bitmap"
-                },
-                {
-                    "file": "images/frame3.png",
-                    "name": "FRAME_THREE",
-                    "targetPlatforms": null,
-                    "type": "bitmap"
-                },
-                {
-                    "file": "images/frame2.png",
-                    "name": "FRAME_TWO",
-                    "targetPlatforms": null,
-                    "type": "bitmap"
-                },
-                {
-                    "file": "images/frame28.png",
-                    "name": "FRAME_TWENTY_EIGHT",
-                    "targetPlatforms": null,
-                    "type": "bitmap"
-                },
-                {
-                    "file": "images/frame1.png",
-                    "name": "FRAME_ONE",
-                    "targetPlatforms": null,
-                    "type": "bitmap"
-                },
-                {
-                    "file": "images/frame10.png",
-                    "name": "FRAME_TEN",
-                    "targetPlatforms": null,
-                    "type": "bitmap"
-                },
-                {
-                    "file": "images/dialogue.png",
-                    "name": "DIALOGUE_BMP",
-                    "targetPlatforms": null,
-                    "type": "bitmap"
-                },
-                {
-                    "file": "images/choice.png",
-                    "name": "CHOICE_BOX_BMP",
-                    "targetPlatforms": null,
-                    "type": "bitmap"
-                },
-                {
-                    "file": "fonts/Sans.ttf",
-                    "name": "FONT_OSP_DIN_44",
-                    "targetPlatforms": null,
-                    "type": "font"
                 }
             ]
         },
